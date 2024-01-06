@@ -1,0 +1,4 @@
+ma_engineer:
+  port: "/dev/ttyACM1"
+  topic: "imu2"
+    

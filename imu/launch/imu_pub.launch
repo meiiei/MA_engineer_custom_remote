@@ -1,0 +1,16 @@
+<launch>
+
+  <node name ="imu1_pub" pkg ="imu" type ="imu1_pub_node" output = "screen">
+    <rosparam file = "$(find imu)/config/imu1.yaml"/>
+  </node>
+
+  <node name ="imu2_pub" pkg ="imu" type ="imu2_pub_node" output = "screen">
+    <rosparam file = "$(find imu)/config/imu2.yaml"/>
+  </node>
+
+  <node name ="imu3_pub" pkg ="imu" type ="imu3_pub_node" output = "screen">
+    <rosparam file = "$(find imu)/config/imu3.yaml"/>
+  </node>
+
+
+</launch>
