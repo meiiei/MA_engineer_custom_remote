@@ -14,6 +14,7 @@ find_package(catkin REQUIRED
         COMPONENTS
         tf2_geometry_msgs
         roscpp
+        serial
         controller_msgs
         )
 ## System dependencies are found with CMake's conventions
@@ -113,6 +114,7 @@ catkin_package(
         CATKIN_DEPENDS
         roscpp
         sensor_msgs
+        serial
         tf2_geometry_msgs
         controller_msgs
         LIBRARIES ${PROJECT_NAME}
@@ -158,7 +160,7 @@ ${EIGEN3_INCLUDE_DIR}
 # target_link_libraries(${PROJECT_NAME}_node
 #   ${catkin_LIBRARIES}
 # )
-add_executable(controller_node src/controller.cpp src/main.cpp)
+add_executable(controller_node src/controller.cpp src/main.cpp src/crc.cpp)
 
 target_link_libraries(controller_node
   ${catkin_LIBRARIES}

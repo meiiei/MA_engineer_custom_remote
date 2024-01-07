@@ -9,7 +9,7 @@
 #include <Eigen/QR>
 #include "controller_msgs/myimu.h"
 #include <sensor_msgs/Imu.h>
-
+#include "ma_serial.hpp"
 
 typedef struct 
 {
@@ -106,6 +106,16 @@ Eigen::Vector3d R2ZYZ(const Eigen::Matrix3d& R) {
     return zyz;
 }
 
+void get_joint(ma_serial_packet::SendPacket& packet)
+{
+    packet._joint.j0 = _joint.j0;
+    packet._joint.j1 = _joint.j1;
+    packet._joint.j2 = _joint.j2;
+    packet._joint.j3 = _joint.j3;
+    packet._joint.j4 = _joint.j4;
+    packet._joint.j5 = _joint.j5;
+
+}
 controller_msgs::myimu myimu;
 private:
 joint _joint;
